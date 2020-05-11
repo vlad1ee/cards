@@ -19,14 +19,14 @@ class Deck(Card):
         shuffle(self.deck_cards)
 
     def get_card(self):
-        self.single_card = choice(self.deck_cards)
-        self.deck_cards.remove(self.single_card)
-        print(self.single_card)
-
-
+        try:
+            self.single_card = choice(self.deck_cards)
+            self.deck_cards.remove(self.single_card)
+            print(self.single_card)
+        except Exception as e:
+            print('The deck is empty')
 card = Deck()
 card.mix()
-card.get_card()
 card.get_card()
 card.get_card()
 card.get_card()
